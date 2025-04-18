@@ -25,4 +25,4 @@ modules:
     sources:
       - type: git 
         url: https://github.com/joach70/cosmic-expansion
-        commit: bf8eadf63add91ee906920fc84fa8096d5d0a835
+        commit: 64d6d9c3db8a55ec251e15e7f40fd400254f4685
