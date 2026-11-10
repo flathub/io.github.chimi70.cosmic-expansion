@@ -1,11 +1,11 @@
 id: io.github.chimi70.cosmic-expansion
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
-base: org.godotengine.godot.BaseApp
-base-version: '4.3'
+runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 command: godot-runner
-
+rename-icon: cosmic-expansion
+rename-desktop-file: cosmic-expansion.desktop
+rename-appdata-file: appstream.xml
 finish-args:
   - --share=network
   - --socket=pulseaudio
@@ -14,15 +14,17 @@ finish-args:
   - --share=ipc
 
 modules:
+  - godot-4.3.yaml
   - name: cosmic_expansion
     buildsystem: simple
     build-commands:
-      - install -Dm644 ./appstream.xml /app/share/appdata/io.github.chimi70.cosmic-expansion.appdata.xml
       - install -Dm644 ./export/0.3/linux/cosmic_expansion.pck /app/bin/godot-runner.pck
-      - install -Dm644 ./cosmic-expansion.svg /app/share/icons/hicolor/scalable/apps/io.github.chimi70.cosmic-expansion.svg
-      - install -Dm644 ./cosmic-expansion.desktop /app/share/applications/io.github.chimi70.cosmic-expansion.desktop
-
+      - install -Dm644 ./appstream.xml -t /app/share/metainfo/
+      - install -Dm644 ./cosmic-expansion.svg -t /app/share/icons/hicolor/scalable/apps/
+      - install -Dm644 ./cosmic-expansion.desktop -t /app/share/applications/
     sources:
       - type: git 
         url: https://github.com/joach70/cosmic-expansion
         commit: 64d6d9c3db8a55ec251e15e7f40fd400254f4685
+      - type: patch
+        path: patches/fix-appdata.patch
