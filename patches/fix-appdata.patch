@@ -1,0 +1,36 @@
+From db1315e3872abd1536858a7f1ef11181039298ad Mon Sep 17 00:00:00 2001
+From: Sabri Ünal <yakushabb@gmail.com>
+Date: Wed, 11 Nov 2026 01:27:16 +0300
+Subject: [PATCH] Fix appdata paper cuts
+
+---
+ appstream.xml | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/appstream.xml b/appstream.xml
+index 6539c60..ab809f3 100644
+--- a/appstream.xml
++++ b/appstream.xml
+@@ -23,7 +23,9 @@
+       With action-packed levels and rewarding progression, Cosmic Expansion delivers a fun and engaging space shooter experience for fans of retro arcade games.
+     </p>
+   </description>
+-  <developer_name>Joachim70</developer_name>
++  <developer id="io.github.joach70">
++    <name>Joachim70</name>
++  </developer>
+   <metadata_license>CC0-1.0</metadata_license>
+   <project_license>GPL-3.0-only</project_license>
+   <url type="homepage">https://github.com/joach70/Cosmic-Expansion</url>
+@@ -84,7 +86,7 @@
+   </content_rating>
+   <releases>
+     <release version="0.3" date="2025-02-23">
+-      <description>Initial release of Cosmic Expansion</description>
++      <description><p>Initial release of Cosmic Expansion</p></description>
+       <url type="details">https://github.com/joach70/Cosmic-Expansion/releases/tag/v0.3</url>
+     </release>
+   </releases>
+--
+libgit2 1.9.7
+
